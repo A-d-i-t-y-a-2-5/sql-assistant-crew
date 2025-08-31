@@ -9,7 +9,7 @@ def run_query(query):
         conn = sqlite3.connect(DB_PATH)
         df = pd.read_sql_query(query, conn)
         conn.close()
-        return df.head().to_string(index=False)
+        return df.to_string(index=False)
     except Exception as e:
         return f"Query failed: {e}"
     
